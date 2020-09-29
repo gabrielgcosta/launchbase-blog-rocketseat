@@ -3,25 +3,22 @@
 {% block head %}
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-<title>Videos - Rocketseat</title>
+<title>{{item.title}} - Rocketseat</title>
 {% endblock %}
 
 
 {% block content %}
 
 
-<div id="wrapper">
-  <h1>Videos</h1>
+<div id="wrapper" class="video">
+  <h1>{{item.title}}</h1>
 </div>
-<div class="cards">
+<div class="video">
 
-  {% for item in items %}
   <div class="card" id="{{item.id}}">
-    <div class="card_image-container {{ 'featured-wrapper' if item.featured }}">
-      <img src="http://i3.ytimg.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}">
-      {% if item.featured %}
-        <div class="featured">Featured</div>
-      {% endif %}
+    <div class="card_video-container">
+      <iframe src="https://www.youtube.com/embed/{{item.id}}" frameborder="0"></iframe>
+
     </div>
 
     <div class="card_content">
@@ -38,8 +35,6 @@
       </div>
     </div>
   </div>
-  {% endfor %}
 </div>
 
-<script src="/scripts.js"></script>
 {% endblock %}

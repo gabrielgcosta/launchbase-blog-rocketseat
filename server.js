@@ -29,7 +29,25 @@ server.get("/classes", function (req, res){
 })
 
 server.get("/blog", function (req, res){
+  
   return res.render("blog")
+})
+
+server.get("/video", function(req, res){
+  const id = req.query.id;
+
+  const video = videos.find(function(video){
+    return video.id == id;
+
+  })
+
+  if (!video){
+    return res.send("Video not found!");
+  }
+
+  return res.render("video", {item: video})
+
+  res.send(id);
 })
 
 server.use(function(err, req, res, next) {

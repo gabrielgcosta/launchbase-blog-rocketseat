@@ -1,0 +1,15 @@
+{% extends "layout.njk" %}
+
+
+{% block content %}
+<div id="wrapper">
+  <img src={{about.logo_url}} alt="Rocketseat" class="logo">
+  
+  <div class="text">
+    <h2>{{about.title}}</h2>
+    <p>{{about.description}}</p>
+  </div>
+  
+</div>
+
+{% endblock %}
